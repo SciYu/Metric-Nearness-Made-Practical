@@ -20,14 +20,14 @@ Our work proposes a new solution to the metric nearness problem defned above. Th
 
   $\min_{X \in \mathbb{R}^{n \times n}} ||X - D^o||_F^2$ 
   
-  subject to $x_{ii} = 0$, $x_{ij} = x_{ji} \ge 0$, $\exp(-\gamma X) \succeq 0$, $\forall 1 \le i,j \le n$.
+  subject to $x_{ii} = 0$, $x_{ij} = x_{ji} \ge 0$, $\exp(-\gamma X) \succeq 0$, $\forall$ $1 \le i,j \le n$.
 
 - **Stage-II. HLWB Projection**: The
 alternating projection stage iteratively refnes the approximate solution $X^o$ obtained in stage-I to the optimal one by:
 
   $\min_{X \in \mathbb{R}^{n \times n}} ||X - X^o||_F^2$ 
   
-  subject to $x_{ij} \le x_{ik} + x_{kj}$, $\forall 1 \le i,j,k \le n$.
+  subject to $x_{ij} \le x_{ik} + x_{kj}$, $\forall$ $1 \le i,j,k \le n$.
 
 ## Method
 
