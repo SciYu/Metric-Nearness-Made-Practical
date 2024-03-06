@@ -4,12 +4,12 @@ The source code for the AAAI'2023 paper titled "**Metric Nearness Made Practical
 
 ## Introduction
 
-This Github repository contains the implementation of our proposed ***HLWB*** (Halpern-Lions-Wittmann-Bauschke) algorithm, designed to efficiently solve the *metric nearness problem*, especially for the large-scale problems.
+This Github repository contains the implementation of our proposed ***HLWB*** (Halpern-Lions-Wittmann-Bauschke) algorithm, designed to efficiently solve the ***metric nearness problem***, especially for the large-scale problems.
 
 - **Metric Nearness Problem**: Given a non-metric distance matrix $D^o \in \mathbb{R}^{n \times n}$, the metric nearness problem is to seek a valid metric $X \in \mathbb{R}^{n \times n}$ that is nearest to the observation $D^o$ by:
 
   $$
-    \min_{X} \|X - D^o\|_F^2 \quad \text{s.t.} \quad x_{ii} = 0, \quad x_{ij} = x_{ji} \ge 0, \quad x_{ij} \le x_{ik} + x_{kj}, \quad \forall \quad 1 \le i,j,k \le n
+    \min_{X} \|X - D^o\|_F^2 \quad s.t. \quad x_{ii} = 0, \quad x_{ij} = x_{ji} \ge 0, \quad x_{ij} \le x_{ik} + x_{kj}, \quad \forall \quad 1 \le i,j,k \le n
   $$
 
   In practice, existing approaches still face non-trivial challenges from a large number of $O(n^3)$ triangle inequalities that rapidly grows when the sample size $n$ increases.
