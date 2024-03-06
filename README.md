@@ -36,6 +36,7 @@ alternating projection stage iteratively refnes the approximate solution $X^o$ o
 ./README.md                     - This readme file.
 ./demo.m                        - Demo of solving the metric nearness problem on a 200*200 matrix.
 ./demo_large.m                  - Demo of solving the metric nearness problem on a 1000*1000 matrix.
+./ismetric.m                    - Check if a given matrix meet the distance metric requirements.
 
 |data/                          - Noisy distance matrices
    ./sample.mat                 - A 200*200 noisy distance matrix and the ground-truth.
