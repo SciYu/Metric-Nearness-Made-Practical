@@ -10,7 +10,7 @@ This Github repository contains the implementation of our proposed ***HLWB*** (H
 
   $\min_{X} ||X - D^o||_F^2$
 
-  $$\min_{X} ||X - D^o||_F^2  s.t.  x_{ii} = 0,  x_{ij} = x_{ji} \ge 0,  x_{ij} \le x_{ik} + x_{kj},  \forall  1 \le i,j,k \le n$$
+  $\min_{X} ||X - D^o||_F^2  s.t.  x_{ii} = 0,  x_{ij} = x_{ji} \ge 0,  x_{ij} \le x_{ik} + x_{kj},  \forall  1 \le i,j,k \le n$
 
   In practice, existing approaches still face non-trivial challenges from a large number of $O(n^3)$ triangle inequalities that rapidly grows when the sample size $n$ increases.
 
