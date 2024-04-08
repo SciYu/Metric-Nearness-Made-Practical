@@ -17,31 +17,33 @@ if (nargin < 2)
 end
 n = size(D, 1);
 metric = true;
-CSR = 1;
 
 %% check diagonal
 if max(abs(diag(D))) > epsilon
     metric = false;
+    CSR = NaN;
     return
 end
 
 %% check symmetry
 if ~issymmetric(D)
     metric = false;
+    CSR = NaN;
     return
 end
 
-%% check triangular inequalities
-count = 0; % the number of violated triangular inequalities
+%% check triangle inequalities
+n_total = nchoosek(n,3) * 3; % total number of triangle inequalities
+n_fail = 0;                  % the number of violated triangle inequalities
 for i = 1 : n-1
     for j = i+1 : n
         num = nnz(D(i,j)-epsilon > D(:,i)+D(:,j));
         if num > 0
             metric = false;
-            count = count + num;
+            n_fail = n_fail + num;
         end
     end
 end
-CSR = 1 - count / (nchoosek(n,3)*3); % CSR = 1 - Ratio of violated triangle inequalities
+CSR = 1 - n_fail / n_total; % CSR = 1 - Ratio of violated triangle inequalities
 
 end
