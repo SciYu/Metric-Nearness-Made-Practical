@@ -26,7 +26,7 @@ C = (C+C')/2;
 end
 
 
-function [X, iter] = nearpsd(A, maxits, low, high, d)
+function [X, iter] = nearpsd(A, maxits, low, high, dv)
 % function [X, iter] = nearpsd(A, maxits, low, high, d)
 %
 % Computes the nearest positive semi-definite matrix 
@@ -42,7 +42,7 @@ function [X, iter] = nearpsd(A, maxits, low, high, d)
 % @return iter    number of iterations taken
 
 if  ~isequal(A,A'), A = (A + A') / 2; end
-if nargin < 5, d = 1; end
+if nargin < 5, dv = 1; end
 if nargin < 4, high = 1; end
 if nargin < 3, low = 0; end
 if nargin < 2, maxits = 100; end
@@ -84,12 +84,12 @@ while 1
     
     % problem-dependent knowledge added here, e.g.
     Y = X;
-    Y(1:n+1:n*n) = d;
+    Y(1:n+1:n*n) = dv;
     Y(Y<low) = low;
     Y(Y>high) = high;
 end
 
-Y(1:n+1:n*n) = d;
+Y(1:n+1:n*n) = dv;
 Y(Y<low) = low;
 Y(Y>high) = high;
 %fprintf('Number of iterations taken: %4.0f\n',iter);
