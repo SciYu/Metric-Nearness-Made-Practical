@@ -58,6 +58,10 @@ alternating projection stage iteratively refnes the approximate solution $X^o$ o
    ./hlwb_projection.c          - Stage-II. HLWB Projection.
    ./hlwb_projection.mexa64     - MEX compiled hlwb_projection.c on linux x64.
    ./hlwb_projection.m          - If hlwb_projection.c can't be compiled, use this one.
+
+|python/
+   ./hlwb_algorithm.py          - Python implementation of the HLWB algorithm.
+   ./matrix_optimization.cpp    - C++-accelerated versions of `heuristic_improve` and `hlwb_projection`.
 </pre>
 
 Link of baselines:
