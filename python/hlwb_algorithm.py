@@ -1,7 +1,5 @@
 import numpy as np
-import OptimizationPack.matrix_optimization as matrix_optimization
-# from numba import njit, prange
-# from scipy.linalg import eigh
+import matrix_optimization as matrix_optimization
 
 def nearpsd(A, maxits=100, low=0, high=1, d=1):
     """
